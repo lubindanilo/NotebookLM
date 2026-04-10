@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.env
+
+# Generated outputs
+output/
+uploads/
+
+# NotebookLM auth
+.notebooklm/
+
+# Frontend
+app/frontend/node_modules/
+app/frontend/dist/
+
+# OS
+.DS_Store
+
+# Claude Code
+.claude/
+CLAUDE.md
+notebooklm-forge/
