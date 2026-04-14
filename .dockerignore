@@ -1,0 +1,13 @@
+app/frontend/node_modules/
+app/frontend/dist/
+output/
+uploads/
+.claude/
+notebooklm-forge/
+tests/
+docs/
+__pycache__/
+*.pyc
+.git/
+.DS_Store
+.env

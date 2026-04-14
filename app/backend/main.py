@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -16,9 +17,13 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="NotebookLM Forge", lifespan=lifespan)
 
+allowed_origins = os.getenv(
+    "CORS_ORIGINS", "http://localhost:5173"
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )

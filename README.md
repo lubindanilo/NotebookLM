@@ -37,6 +37,25 @@ A FastAPI backend wraps [notebooklm-py](https://github.com/teng-lin/notebooklm-p
 | GET | `/api/status/:id` | Poll job progress |
 | GET | `/api/download/:id/:file` | Download result |
 
+## Deploy
+
+**Backend** on [Railway](https://railway.app) (or any Docker host):
+
+1. Connect your repo to Railway — it auto-detects the `Dockerfile`
+2. Set env vars:
+   - `NOTEBOOKLM_STORAGE_STATE` — your `~/.notebooklm/storage_state.json`, base64-encoded:
+     ```bash
+     base64 -i ~/.notebooklm/storage_state.json | pbcopy
+     ```
+   - `CORS_ORIGINS` — your frontend URL (e.g. `https://your-app.vercel.app`)
+3. Deploy
+
+**Frontend** on [Vercel](https://vercel.com):
+
+1. Import repo, set root directory to `app/frontend`
+2. Set env var `VITE_API_URL` to your Railway backend URL
+3. Deploy
+
 ## Tests
 
 ```bash

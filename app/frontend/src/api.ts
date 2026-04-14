@@ -1,6 +1,6 @@
 import type { AuthStatus, JobStatus, SourceInput, OutputConfig } from "./types";
 
-const BASE = "/api";
+const BASE = `${import.meta.env.VITE_API_URL || ""}/api`;
 
 export async function getAuthStatus(): Promise<AuthStatus> {
   const res = await fetch(`${BASE}/auth-status`);
